@@ -1,34 +1,24 @@
-﻿#include <map>
-#include <iostream>
-#include <string>
-#include <Windows.h>
+﻿#include <iostream>
+#include <map>
+#include <list>
 
 using namespace std;
 
 int main()
 {
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
-    setlocale(LC_ALL, "ru");
-    map<int, string> scrable =
-    { {10,"Иеруалимов Артём Сергеевич"},
-      {3,"Иван Иванов Иванушкин"},
-      {8,"Денис Денисович Денисов"},
-      {7,"Кирилл Кириллович Кириллов"},
-      {14,"ПОН ПОНОВИЧ ПОНОВ"}
-    };
-    int k = 0;
-    int i=0;
-    cout << "Введите айди: ";
-    cin >> k;
-    for (auto pair : scrable)
-    {
-        if (k <= pair.first)
-        {
-            cout << "Id :" << pair.first << "  Fio :" << pair.second << endl;
-            i++;
-        }
-
-    }
-    cout << "Всего людей удв условию: " << i;
+	list<int> z;
+	z.push_back(1);
+	z.push_back(5);
+	z.push_back(4);
+	z.push_back(2);
+	z.push_back(7);
+	z.push_back(22);
+	z.sort();
+	auto it = z.end();
+	it--;
+	for (it; it != z.begin(); it--)
+	{
+		cout << *it;
+	}
+	cout << *z.begin();
 }
